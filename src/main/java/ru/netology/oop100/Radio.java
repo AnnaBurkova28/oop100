@@ -42,7 +42,7 @@ public class Radio {
         return volumeSound;
     }
 
-    public void nextVolumeSound( ) {
+    public void nextVolumeSound() {
         if (volumeSound != 10) {
             volumeSound++;
         } else {
@@ -59,17 +59,17 @@ public class Radio {
 
     }
 
-    public void setVolumeSound(int volumeSound){
-            if (volumeSound < 0) {
-                return;
-            }
-            if (volumeSound > 10) {
-                return;
-            }
-
-            this.volumeSound = volumeSound;
+    public void setVolumeSound(int volumeSound) {
+        if (volumeSound < 0) {
+            return;
+        }
+        if (volumeSound > 10) {
+            return;
         }
 
+        this.volumeSound = volumeSound;
     }
+
+}
 
 
