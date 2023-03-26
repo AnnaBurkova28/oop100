@@ -1,11 +1,24 @@
 package ru.netology.oop100;
 
 public class Radio {
+    private int maxStation;
+
+
     private int currentStationNumber;
     private int volumeSound;
 
+    public Radio() {
+        maxStation = 9;
+
+    }
+
+    public Radio(int stationCount) {
+        maxStation = stationCount - 1;
+
+    }
+
     public void nextCurrentStationNumber() {
-        if (currentStationNumber != 9) {
+        if (currentStationNumber != maxStation) {
             currentStationNumber++;
         } else {
             currentStationNumber = 0;
@@ -17,7 +30,7 @@ public class Radio {
         if (currentStationNumber != 0) {
             currentStationNumber--;
         } else {
-            currentStationNumber = 9;
+            currentStationNumber = maxStation;
         }
 
     }
@@ -31,11 +44,13 @@ public class Radio {
         if (currentStationNumber < 0) {
             return;
         }
-        if (currentStationNumber > 9) {
+        if (currentStationNumber > maxStation) {
             return;
         }
         this.currentStationNumber = currentStationNumber;
     }
+
+
 
     public int getVolumeSound() {
 
