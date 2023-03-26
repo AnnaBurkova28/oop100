@@ -7,6 +7,42 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
+    public void testCurrentStation() {
+        Radio radio = new Radio(30);
+        radio.setCurrentStationNumber(17);
+
+
+        int expected = 17;
+        int actual = radio.getCurrentStationNumber();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testCurrentStationlimit() {
+        Radio radio = new Radio(30);
+        radio.setCurrentStationNumber(30);
+
+
+        int expected = 0;
+        int actual = radio.getCurrentStationNumber();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testCurrentStationbylimit() {
+        Radio radio = new Radio(30);
+        radio.setCurrentStationNumber(29);
+
+
+        int expected = 29;
+        int actual = radio.getCurrentStationNumber();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
     public void testNextCurrentStationNumber() {
         Radio radio = new Radio();
         radio.setCurrentStationNumber(3);
